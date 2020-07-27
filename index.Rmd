@@ -1,17 +1,17 @@
 --- 
-title: "A Minimal Bookdown Book"
-author: "Sean Kross"
+title: "Migrants in Hong Kong"
+author: "Author's name"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: seankross/bookdown-start
-url: 'http\://seankross.com/bookdown-start/'
-description: "Everything you need (and nothing more) to start a bookdown book."
+github-repo: impatient-researcher/migrants_in_hk_book
+url: 'http\://impatient-researcher.github.io/migrants_in_hk_book/'
+description: "A prototype of the book"
 ---
 
 # Preface {-}
 
-This is the very first part of the book.
+Preface goes here
