@@ -46,7 +46,8 @@ kable(chapter1_t1_p, "html",
                 font_size = 14, full_width = F) %>%
   pack_rows("All age", 1, 5) %>%
   pack_rows("Age 20-64", 6, 10) %>%
-  add_indent(c(3, 4, 8, 9))
+  add_indent(c(3, 4, 8, 9)) %>%
+  kableExtra::scroll_box(width = "100%")
 ```
 
 

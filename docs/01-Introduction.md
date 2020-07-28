@@ -24,7 +24,7 @@ In view of the diversity in the background of residents originally from Mainland
 
 For the purpose of some of the analyses in this book, it is convenient to categorized Mainland Chinese migrants into “old migrants” and “new migrants”. Old migrants are those who have been in Hong Kong for seven or more years. The seven-year duration of stay is a natural criterion for dividing migrants into “old” and “new” because in Hong Kong a residency of seven years qualifies the migrant to apply for permanent residence. The census does not have information on permanent residence but it is believed that most Mainland Chinese migrants do apply and become permanent residents. On the other hand, new migrants are those who have been in Hong Kong less than seven years. There is no information on whether new migrants, especially those who come for education or employment under various schemes, intend to stay beyond seven years and become old migrants with permanent residence status.^[Those who come under the One-way Permit Scheme and some other schemes like Capital Investment Entrant Scheme are probably more clear in their motivation to come to Hong Kong to settle, eventually becoming permanent residents, but less so for those who arrive under the General Employment Policy for Mainland Professionals Residing Overseas, for instance. For details see Chapter 3.] 
 
-<table class="table table-striped table-hover table-responsive" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; "><table class="table table-striped table-hover table-responsive" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">(\#tab:chapter1-t1-p)Distribution of Migrant Groups</caption>
  <thead>
   <tr>
@@ -153,7 +153,7 @@ For the purpose of some of the analyses in this book, it is convenient to catego
    <td style="text-align:center;"> 29,067 (11.63%) </td>
   </tr>
 </tbody>
-</table>
+</table></div>
 
 
 Table \@ref(tab:chapter1-t1-p) shows the distribution of the Hong Kong born, Mainland migrants (sub-classified into old and new) and others born outside of Mainland China and Hong Kong in number and percentage in the entire population and in the age 20-64 sub-population by census. It should be noted that while the Hong Kong born constitute 58-61% of the population over the period 1981 to 2016, the percentage of Mainland Chinese migrants in the population is rather large, even though it declines from 40% in 1981 to just below 30% in 2016. This percentage is high even comparing to other countries that receive large numbers of migrants. It highlights the importance of studying how well migrants fare in Hong Kong as their economic performance has a significant impact on the well-being of the Hong Kong society.
