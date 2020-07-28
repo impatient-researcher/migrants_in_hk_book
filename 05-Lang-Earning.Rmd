@@ -1,0 +1,77 @@
+# Language and Integration of Migrants
+
+```{r warning=FALSE, include=FALSE}
+library(magrittr)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(ggrepel)
+library(ggthemr)
+library(plotly)
+ggthemr("flat")
+options(knitr.kable.NA = "...")
+options(kableExtra.html.bsTable = T)
+```
+
+## Introduction
+
+Language plays an important role in the social and economic integration of migrants in the host country. From the social and the cultural point of view, proficiency in the spoken local language of the community will facilitate migrants’ interaction with the native born. It will certainly be beneficial to the migrants in searching for accommodation, looking for jobs and attending schools. From the economic perspective, Local language ability is a form of human capital. It is an asset that confers an earnings advantage in the job market, especially in occupations that place an earnings premium on language proficiency. 
+
+## Linguistic Integration and Transition to Cantonese-speaking
+
+In most countries that receive migrants, integration will entail migrants learning the local language and assimilating into the community of the host country but the Hong Kong situation is different. In Hong Kong the local dialect is Cantonese which is spoken by 98% of the Hong Kong born. It receives migrants from Mainland China where Putonghua is the official language. Upon the return of sovereignty of Hong Kong to China, the great disparity in population size between the two entities and the increasing integration of the two economies provide strong incentives for Hong Kong people to acquire proficiency in Putonghua as well. Therefore, not only do Mainland migrants have to learn Cantonese after migration to Hong Kong, the Hong Kong born will also have to learn Putonghua. Linguistic integration works in both directions.
+
+The census since 1991 reports the usual language spoken at home of the respondent. It also reports other languages that the respondent can speak. The usual language at home indicates native language fluency whereas the other languages also spoken represent an ability to speak in languages other than the native tongue. Figure 5.1 shows the percentage of Cantonese and Putonghua as the usual language spoken at home (labelled as Cantonese-speaking and Putonghua-speaking respectively for convenience) by migrant/birth status from 1991 to 2016. Among the Hong Kong born about 98% speak Cantonese at home. Interestingly, a small (0.36% in 2016) but increasing percentage speak Putonghua at home. They probably represent Hong Kong born children of Putonghua-speaking parents. The percentage of old migrants who speak Cantonese at home increases from 84.2% in 1991 to 89.4% in 2016. As their duration of stay in Hong Kong lengthens, a higher percentage of them speak Cantonese at home. 
+
+The percentage of Cantonese-speaking new migrants is much lower, increasing from at about 53.1% in 1991 to 80.1% in 2006 before declining to 60.5% in 2016. In the early years Mainland migrants coming to Hong Kong are mostly from Guangdong Province for family re-union and they speak either Cantonese or a local dialect but in more recent years the sources of Mainland migrants have diversified to provinces other than Guangdong.^[Refer to Figures 3.5A and 3.5B of the Chapter on Changing Characteristics of Mainland Migrants.] Furthermore, since 2008 the number of Mainland migrants who come for employment increases sharply. The various manpower schemes attract entrants from all over Mainland China who are Putonghua-speaking. Consequently, the percentage of new migrants who speak Putonghua at home rises sharply from 4.3% in 2006 to 21.9% in 2016. Even among the new migrants who speak Putonghua at home, an increasing percent (from 55.0% in 1991 to 64.1% in 2016) of them are able to speak Cantonese. The overall percentage of the new migrants who can speak Cantonese (regardless of their usual language spoken at home) is very high, ranging from 85% to 95% over this period (Figure 5.2). 
+
+As the new migrants stay beyond seven years and become old migrants, over time a high percentage of them (84% to 89%) will actually speak Cantonese at home as compared to 54% to 80% of the new migrants (Figure 5.1). In short, Mainland migrants are integrating into the Cantonese linguistic environment of Hong Kong.
+
+```{r chapter5-g1-static, fig.width = 12, fig.asp = 0.7, fig.cap = '[Static] Distribution of Usual Language, 1991 - 2016 (%)', echo=FALSE}
+chapter5_g1_init <- read.csv("./prettified/chapter5_g1_init.csv")
+
+chapter5_g1 <- chapter5_g1_init %>%
+  mutate(Labels = scales::percent(Ratio, 0.1),
+         Year = factor(Year)) %>%
+  ggplot(aes(x = Year, y = Ratio,
+             text = paste(
+               "Year:", Year,
+               "\nGroup:", Group,
+               "\nUsual Language:", Language,
+               "\nPercentage:", Labels)))  +
+  #,label = Year, label2 = Group, Label3 = Language, Label4 = Labels)) +
+  geom_line(aes(group = Language, colour = Language)) +
+  geom_point(aes(group = Language, colour = Language, shape = Language)) +
+  scale_y_continuous(labels = scales::percent) +
+  scale_colour_discrete(name = "Usual Language") +
+  scale_shape_discrete(name = "Usual Language") +
+  facet_wrap(~Group, nrow = 1) +
+  labs(#title = "Usual Language Breakdown, 1991 - 2016",
+       #subtitle = "",
+       x = "",
+       y = "Percent (%)") + 
+  theme(legend.position = "bottom",
+        panel.background = element_blank(),
+        strip.text.x = element_text(size = 12),
+        strip.text.y = element_text(size = 12))
+
+chapter5_g1 + geom_text_repel(aes(label = Labels))
+```
+
+An **interactive** version can be found here:
+```{r chapter5-g1-interact, fig.width = 12, fig.asp = 0.7, fig.cap = '[Interactive] Distribution of Usual Language, 1991 - 2016 (%)', echo=FALSE}
+chapter5_g1_dyn <- chapter5_g1 +
+  #theme(legend.position = 'bottom') +
+  labs(#title = "Usual Language Breakdown, 1991 - 2016",
+       #subtitle = "",
+       x = "",
+       y = "") 
+
+chapter5_g1_dyn <- chapter5_g1_dyn %>%
+  ggplotly(., height = 525, width = 750, tooltip = "text")
+
+chapter5_g1_dyn <- style(chapter5_g1_dyn, showlegend = FALSE, traces = 1:9)
+
+chapter5_g1_dyn %>%
+  layout(legend = list(orientation = "h", x = 0.28, y = -0.15))
+```

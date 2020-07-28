@@ -1,4 +1,4 @@
-```{r echo=FALSE}
+```{r warning=FALSE, include=FALSE}
 library(magrittr)
 library(knitr)
 library(kableExtra)

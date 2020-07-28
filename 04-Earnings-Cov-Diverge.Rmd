@@ -1,0 +1,3 @@
+# Earnings Convergence or Divergence
+
+Chapter 4 goes here...
